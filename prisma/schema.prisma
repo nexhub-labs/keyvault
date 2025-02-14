@@ -1,0 +1,20 @@
+generator client {
+  provider      = "prisma-client-js"
+  binaryTargets = ["native", "debian-openssl-3.0.x"]
+}
+
+datasource db {
+  provider = "postgresql"
+  // provider = "sqlite"
+  url      = env("KEYVAULT_DATABASE_URL")
+}
+
+model KeyVault {
+  id        String   @id() @default(uuid())
+  keyName   String   @unique
+  keyValue  String
+  key       String
+  iv        String
+  algorithm String   @default("aes-256-gcm")
+  createdAt DateTime @default(now())
+}
