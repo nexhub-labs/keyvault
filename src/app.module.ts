@@ -11,4 +11,4 @@ import { PasswordController } from './password/password.controller';
   controllers: [AppController, PasswordController],
   providers: [AppService, PasswordService, EncryptionService, PrismaService],
 })
-export class AppModule {}
+export class AppModule { }

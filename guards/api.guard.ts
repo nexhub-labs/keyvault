@@ -11,7 +11,7 @@ import { IS_PUBLIC_KEY } from 'decorator/public.decorator';
 
 @Injectable()
 export class APIGuard implements CanActivate {
-  constructor(private reflector: Reflector) {}
+  constructor(private reflector: Reflector) { }
 
   canActivate(
     context: ExecutionContext,
@@ -32,7 +32,7 @@ export class APIGuard implements CanActivate {
       throw new HttpException('No API key provided', HttpStatus.UNAUTHORIZED);
     }
     if (apiKey !== process.env.X_API_KEY) {
-      console.log(process.env.X_API_KEY)
+      // console.log(process.env.X_API_KEY)
       throw new HttpException('Invalid API key', HttpStatus.UNAUTHORIZED);
     }
     return true;
