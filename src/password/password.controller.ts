@@ -2,8 +2,9 @@ import { Controller, Post, Body, UseGuards, Get, HttpException, HttpStatus } fro
 import { PasswordService } from './password.service';
 import { EncryptionService } from '../encryption/encryption.service';
 import { GeneratePasswordDto } from '../dto/generate-password';
-import { APIGuard } from './../../guards/api.guard';
-import { AppService } from './../../src/app.service';
+import { APIGuard } from 'guards/api.guard';
+import { AppService } from 'src/app.service';
+import { Public } from 'decorator/public.decorator';
 
 @Controller('keyvault')
 @UseGuards(APIGuard)
@@ -15,7 +16,7 @@ export class PasswordController {
     ) { }
 
     @Get('')
-    @UseGuards()
+    @Public()
     async generateAPI() {
         return {
             message: 'Welcome to KeyVault, a subsidiary of Nexhub Labs. This is the password generator API.',
