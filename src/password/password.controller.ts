@@ -2,9 +2,9 @@ import { Controller, Post, Body, UseGuards, Get, HttpException, HttpStatus } fro
 import { PasswordService } from './password.service';
 import { EncryptionService } from '../encryption/encryption.service';
 import { GeneratePasswordDto } from '../dto/generate-password';
-import { APIGuard } from 'guards/api.guard';
-import { AppService } from 'src/app.service';
-import { Public } from 'decorator/public.decorator';
+import { APIGuard } from './../../guards/api.guard';
+import { AppService } from './../../src/app.service';
+import { Public } from './../../decorator/public.decorator';
 
 @Controller('keyvault')
 @UseGuards(APIGuard)

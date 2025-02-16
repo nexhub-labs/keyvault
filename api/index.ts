@@ -1,4 +1,3 @@
-import 'tsconfig-paths/register';
 import { VercelApiHandler as Handler } from '@vercel/node';
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from '../src/app.module';
