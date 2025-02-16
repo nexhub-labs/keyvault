@@ -15,6 +15,7 @@ export class PasswordController {
     ) { }
 
     @Get('')
+    @UseGuards()
     async generateAPI() {
         return {
             message: 'Welcome to KeyVault, a subsidiary of Nexhub Labs. This is the password generator API.',
