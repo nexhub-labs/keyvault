@@ -32,6 +32,7 @@ export class APIGuard implements CanActivate {
       throw new HttpException('No API key provided', HttpStatus.UNAUTHORIZED);
     }
     if (apiKey !== process.env.X_API_KEY) {
+      console.log(process.env.X_API_KEY)
       throw new HttpException('Invalid API key', HttpStatus.UNAUTHORIZED);
     }
     return true;
