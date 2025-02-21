@@ -3,13 +3,12 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  // provider = "sqlite"
+  provider = "mongodb"
   url      = env("KEYVAULT_DATABASE_URL")
 }
 
 model KeyVault {
-  id        String   @id() @default(uuid())
+  id        String   @id() @default(uuid()) @map("_id")
   keyName   String   @unique
   keyValue  String
   key       String
